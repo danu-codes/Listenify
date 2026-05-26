@@ -1,0 +1,75 @@
+.audio-player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 900px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 20px;
+
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+
+    color: #F8FAFC;
+
+    z-index: 999;
+}
+
+/* INFO */
+.audio-info h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #F97316;
+}
+
+.audio-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #94A3B8;
+}
+
+/* CONTROLS */
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* BUTTON */
+.audio-controls button {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: #F97316;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+.audio-controls button:hover {
+    transform: scale(1.1);
+}
+
+/* SLIDER */
+.audio-controls input[type="range"] {
+    width: 250px;
+    accent-color: #F97316;
+}

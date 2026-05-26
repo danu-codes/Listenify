@@ -1,0 +1,108 @@
+.rec-card {
+    min-width: 250px;
+    margin-top: 20px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.rec-card:hover {
+    transform: translateY(-8px);
+    border-color: #F97316;
+}
+
+/* image */
+.rec-img {
+    position: relative;
+}
+
+.rec-img img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* tag */
+.rec-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    background: #F97316;
+    color: white;
+
+    font-size: 0.7rem;
+
+    padding: 4px 8px;
+
+    border-radius: 8px;
+}
+
+/* play button */
+.rec-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 45px;
+    height: 45px;
+
+    background: rgba(249,115,22,0.9);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.rec-card:hover .rec-play {
+    opacity: 1;
+}
+
+/* info */
+.rec-info {
+    padding: 12px;
+    color: #F8FAFC;
+}
+
+.rec-info h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.rec-info p {
+    font-size: 0.85rem;
+    color: #94A3B8;
+}
+
+/* reason */
+.rec-reason {
+    display: block;
+    margin-top: 8px;
+
+    font-size: 0.75rem;
+
+    color: #60A5FA;
+}
+
+/* bottom */
+.rec-bottom {
+    margin-top: 8px;
+    color: #F97316;
+    font-size: 0.8rem;
+}
