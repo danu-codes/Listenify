@@ -1,26 +1,17 @@
 /* ================= GOOGLE FONT ================= */
-
-/* 
-Add this in index.css
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*/
-
-
-/* ================= BODY ================= */
-
-body{
+/* ================= GLOBAL ================= */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     background-color: #020617;
+    box-sizing: border-box;
 }
 
 /* ================= NAVBAR ================= */
-
-.navabr-container{
+.navbar-container {
     width: 90%;
     height: 80px;
 
@@ -33,15 +24,12 @@ body{
     padding: 0 30px;
 
     background: rgba(15, 23, 42, 0.7);
-
     backdrop-filter: blur(12px);
 
-    border: 1px solid rgba(255,255,255,0.08);
-
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
 
-    box-shadow:
-    0 8px 32px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 
     position: sticky;
     top: 15px;
@@ -49,48 +37,44 @@ body{
 }
 
 /* ================= LOGO ================= */
-
-.logo{
+.logo {
     font-size: 2rem;
     font-weight: 700;
 
-    background: linear-gradient(to right,#F97316,#FB923C);
+    background: linear-gradient(to right, #F97316, #FB923C);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     cursor: pointer;
-
     letter-spacing: 1px;
 }
 
 /* ================= NAV LINKS ================= */
-
-.nav-links{
+.nav-links {
     display: flex;
     align-items: center;
     gap: 35px;
 
     list-style: none;
+
+    transition: all 0.3s ease;
 }
 
-.nav-link{
+.nav-link {
     color: #E2E8F0;
-
     font-size: 0.95rem;
     font-weight: 500;
 
+    text-decoration: none;
     cursor: pointer;
 
     position: relative;
-
     transition: 0.3s ease;
 }
 
-/* Underline Hover Effect */
-
-.nav-link::after{
+/* hover underline */
+.nav-link::after {
     content: "";
-
     position: absolute;
 
     width: 0%;
@@ -100,28 +84,35 @@ body{
     bottom: -8px;
 
     background-color: #F97316;
-
     transition: 0.3s ease;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: #F97316;
 }
 
-.nav-link:hover::after{
+.nav-link:hover::after {
     width: 100%;
 }
 
-/* ================= LOGIN BUTTON ================= */
+/* active link */
+.nav-link.active {
+    color: #F97316;
+    font-weight: 600;
+}
 
-.log-reg-btn{
+.mobile-auth{
+    display: none;
+}
+
+/* ================= AUTH BUTTON ================= */
+.auth-btn {
     padding: 12px 22px;
 
     border: none;
     border-radius: 14px;
 
-    background: linear-gradient(to right,#F97316,#EA580C);
-
+    background: linear-gradient(to right, #F97316, #EA580C);
     color: white;
 
     font-size: 0.95rem;
@@ -131,114 +122,84 @@ body{
 
     transition: 0.3s ease;
 
-    box-shadow:
-    0 4px 15px rgba(249,115,22,0.35);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.35);
 }
 
-.log-reg-btn:hover{
+.auth-btn:hover {
     transform: translateY(-2px);
-
-    box-shadow:
-    0 8px 20px rgba(249,115,22,0.5);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.5);
 }
 
-/* ================= SEARCH ================= */
-
-.search-container{
-    display: flex;
-    align-items: center;
-
-    background-color: rgba(30,41,59,0.8);
-
-    padding: 5px;
-
-    border-radius: 15px;
-
-    border: 1px solid rgba(255,255,255,0.06);
-}
-
-/* INPUT */
-
-.search-container input{
-    width: 200px;
-
-    background: transparent;
-    border: none;
-    outline: none;
-
-    padding: 10px 15px;
-
-    color: white;
-
-    font-size: 0.95rem;
-}
-
-.search-container input::placeholder{
-    color: #94A3B8;
-}
-
-/* SEARCH BUTTON */
-
-.search-btn{
-    width: 42px;
-    height: 42px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: linear-gradient(to right,#F97316,#EA580C);
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-}
-
-.search-btn:hover{
-    transform: scale(1.05);
+/* ================= DESKTOP AUTH ================= */
+.auth-desktop {
+    display: block;
 }
 
 /* ================= HAMBURGER ================= */
-
-.hamburger{
+.hamburger {
     display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
 
-@media(max-width:1100px){
-
-    .search-container{
-        display: none;
-    }
-}
-
-@media(max-width:900px){
-
-    .nav-links{
-        display: none;
-    }
-
-    .hamburger{
+    .hamburger {
         display: block;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
     }
 
-    .navabr-container{
-        width: 92%;
-        padding: 0 20px;
+    .auth-desktop {
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+
+        flex-direction: column;
+        gap: 20px;
+
+        width: 220px;
+        padding: 20px;
+
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        display: none;
+
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-auth {
+        width: 100%;
+        display: block;
+    }
+
+    .mobile-auth .auth-btn {
+        width: 100%;
     }
 }
 
-@media(max-width:500px){
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 500px) {
 
-    .navabr-container{
+    .navbar-container {
         height: 70px;
         border-radius: 16px;
+        padding: 0 20px;
     }
 
-    .logo{
+    .logo {
         font-size: 1.6rem;
     }
 }

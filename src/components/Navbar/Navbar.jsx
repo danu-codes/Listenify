@@ -1,28 +1,71 @@
-import React from 'react'
-import './Navbar.css'
+import React, { useState } from 'react';
+import './Navbar.css';
+import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const closeMenu = () => setMenuOpen(false);
+
     return (
-        <div className='navabr-container'>
-            <div className="logo">listenify</div>
+        <div className="navbar-container">
 
-            <ul className='nav-links'>
-                <li className='nav-link'>Home</li>
-                <li className='nav-link'>Explore</li>
-                <li className='nav-link'>Upload Story</li>
-                <li className='nav-link'>Podcasts</li>
-                <li><button className='log-reg-btn'>Login/Register</button></li>
-            </ul>
-
-            <div className="search-container">
-                <input type="text" placeholder='Search Here' />
-                <button className='search-btn'>🔍︎</button>
+            {/* LOGO */}
+            <div className="logo">
+                Listenify
             </div>
 
-            <div className="hamburger">
-                ☰
+            {/* HAMBURGER */}
+            <div
+                className="hamburger"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                {menuOpen ? "✖" : "☰"}
+            </div>
+
+            {/* NAV LINKS */}
+            <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+
+                <li>
+                    <NavLink to="/" className="nav-link" onClick={closeMenu}>
+                        Home
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink to="/explore" className="nav-link" onClick={closeMenu}>
+                        Explore
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink to="/upload" className="nav-link" onClick={closeMenu}>
+                        Upload
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink to="/podcasts" className="nav-link" onClick={closeMenu}>
+                        Podcasts
+                    </NavLink>
+                </li>
+
+                {/* MOBILE LOGIN */}
+                <li className="mobile-auth">
+                    <button className="auth-btn">
+                        Login / Register
+                    </button>
+                </li>
+
+            </ul>
+
+            {/* DESKTOP LOGIN */}
+            <div className="auth-desktop">
+                <button className="auth-btn">
+                    Login / Register
+                </button>
             </div>
 
         </div>
-    )
-}
+    );
+};

@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
 
     padding: 15px 20px;
 
@@ -20,16 +20,16 @@
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 20px;
 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-
     color: #F8FAFC;
+
     z-index: 999;
 }
 
-/* INFO */
+/* ================= INFO ================= */
+
 .audio-info {
-    min-width: 0;
     flex: 1;
+    min-width: 0;
 }
 
 .audio-info h4 {
@@ -48,15 +48,17 @@
     text-overflow: ellipsis;
 }
 
-/* CONTROLS */
+/* ================= CONTROLS ================= */
+
 .audio-controls {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     flex: 2;
 }
 
-/* BUTTON */
+/* PLAY BUTTON (ONLY ONE STYLE - FIXED) */
+
 .audio-controls button {
     width: 42px;
     height: 42px;
@@ -79,20 +81,20 @@
     transform: scale(1.08);
 }
 
-/* SLIDER */
+/* RANGE */
 .audio-controls input[type="range"] {
-    width: 100%;
+    flex: 1;
+    min-width: 100px;
+
     accent-color: #F97316;
 }
 
-/* ========================= */
-/* TABLET */
-/* ========================= */
+/* ================= TABLET ================= */
 
 @media (max-width: 768px) {
     .audio-player {
         padding: 12px 15px;
-        gap: 12px;
+        gap: 10px;
     }
 
     .audio-controls {
@@ -114,18 +116,15 @@
     }
 }
 
-/* ========================= */
-/* MOBILE */
-/* ========================= */
+/* ================= MOBILE ================= */
 
 @media (max-width: 480px) {
     .audio-player {
         flex-direction: column;
         align-items: stretch;
+        gap: 10px;
 
         padding: 15px;
-        gap: 12px;
-
         bottom: 10px;
         width: 95%;
     }
@@ -136,11 +135,7 @@
 
     .audio-controls {
         width: 100%;
-    }
-
-    .audio-controls button {
-        width: 40px;
-        height: 40px;
+        justify-content: space-between;
     }
 
     .audio-controls input[type="range"] {

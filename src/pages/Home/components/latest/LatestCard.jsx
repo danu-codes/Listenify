@@ -6,7 +6,6 @@ export const LatestCard = ({ title, author, image, duration, audio }) => {
   const { playAudio } = useAudio();
   return (
     <div className="latest-card" onClick={() => {
-      console.log("Audio URL:", audio);
       playAudio({ title, author, image, audio });
     }}>
       <div className="img-box">
