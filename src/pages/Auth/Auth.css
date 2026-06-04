@@ -1,0 +1,137 @@
+
+.auth-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: #020617;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 35px;
+
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+    transition: all 0.3s ease;
+}
+
+/* TITLE */
+.auth-box h2 {
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+
+    background: linear-gradient(to right, #F97316, #FB923C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* INPUTS */
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(30,41,59,0.7);
+    color: white;
+
+    outline: none;
+
+    font-size: 0.95rem;
+}
+
+/* BUTTON */
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(to right, #F97316, #EA580C);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.auth-box button:hover {
+    transform: translateY(-2px);
+}
+
+/* SWITCH TEXT */
+.switch-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #94A3B8;
+}
+
+.switch-text span {
+    color: #F97316;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    .auth-box {
+        max-width: 95%;
+        padding: 25px;
+    }
+
+    .auth-box h2 {
+        font-size: 1.4rem;
+    }
+
+    .auth-box input {
+        padding: 11px;
+        font-size: 0.9rem;
+    }
+
+    .auth-box button {
+        padding: 11px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+    .auth-box {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .auth-box h2 {
+        font-size: 1.2rem;
+    }
+
+    .switch-text {
+        font-size: 0.8rem;
+    }
+}

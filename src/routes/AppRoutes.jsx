@@ -1,9 +1,9 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-
 import { Home } from '../pages/Home/Home';
 import { Explore } from '../pages/Explore/Explore';
 import { Upload } from '../pages/Upload/Upload';
+import Auth from '../pages/Auth/Auth';
 
 export const AppRoutes = () => {
     return (
@@ -11,6 +11,7 @@ export const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/upload" element={<Upload />} />
+            <Route path="/auth" element={<Auth />} />
         </Routes>
     )
 }

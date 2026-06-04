@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-
     const closeMenu = () => setMenuOpen(false);
+    const navigate = useNavigate();
 
     return (
         <div className="navbar-container">
@@ -13,14 +14,6 @@ export const Navbar = () => {
             {/* LOGO */}
             <div className="logo">
                 Listenify
-            </div>
-
-            {/* HAMBURGER */}
-            <div
-                className="hamburger"
-                onClick={() => setMenuOpen(!menuOpen)}
-            >
-                {menuOpen ? "✖" : "☰"}
             </div>
 
             {/* NAV LINKS */}
@@ -52,12 +45,26 @@ export const Navbar = () => {
 
                 {/* MOBILE LOGIN */}
                 <li className="mobile-auth">
-                    <button className="auth-btn">
+                    <button className="auth-btn"
+                        onClick={() => navigate("/auth")}>
                         Login / Register
                     </button>
                 </li>
 
             </ul>
+
+            <div className="nav-search-wrapper">
+                <input type="text" placeholder="Search..." />
+            </div>
+
+            {/* HAMBURGER */}
+            <div
+                className="hamburger"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                {menuOpen ? "✖" : "☰"}
+            </div>
+
 
             {/* DESKTOP LOGIN */}
             <div className="auth-desktop">

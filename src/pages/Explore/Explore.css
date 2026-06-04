@@ -1,0 +1,128 @@
+
+/* ================= CONTAINER ================= */
+.explore-container {
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+    color: white;
+}
+
+/* TITLE */
+.explore-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+
+    background: linear-gradient(to right, #F97316, #FB923C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= SEARCH BOX ================= */
+.search-box {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin-bottom: 25px;
+
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 14px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+}
+
+.search-box input::placeholder {
+    color: #94A3B8;
+}
+
+.search-box button {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    background: linear-gradient(to right, #F97316, #EA580C);
+    color: white;
+
+    cursor: pointer;
+}
+
+/* ================= FILTERS ================= */
+.filter-box {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin-bottom: 30px;
+}
+
+.filter-box button {
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(30,41,59,0.6);
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.filter-box button:hover {
+    background: #F97316;
+}
+
+/* ================= SECTION TITLE ================= */
+.section-title {
+    margin: 20px 0;
+    font-size: 1.3rem;
+    color: #E2E8F0;
+}
+
+/* ================= CATEGORY GRID ================= */
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.category-card {
+    background: rgba(15, 23, 42, 0.7);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    background: rgba(249, 115, 22, 0.15);
+    border-color: #F97316;
+}
