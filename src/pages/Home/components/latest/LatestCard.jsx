@@ -1,9 +1,14 @@
 import React from "react";
 import "./LatestCard.css";
+import { useAudio } from "../../../../context/AudioContext";
 
-export const LatestCard = ({ title, author, image, duration }) => {
+export const LatestCard = ({ title, author, image, duration, audio }) => {
+  const { playAudio } = useAudio();
   return (
-    <div className="latest-card">
+    <div className="latest-card" onClick={() => {
+      console.log("Audio URL:", audio);
+      playAudio({ title, author, image, audio });
+    }}>
       <div className="img-box">
         <img src={image} alt={title} />
 

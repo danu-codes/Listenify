@@ -1,5 +1,7 @@
 import React from "react";
 import "./RecommendedCard.css";
+import { useAudio } from "../../../../context/AudioContext";
+
 
 export const RecommendedCard = ({
   title,
@@ -8,9 +10,11 @@ export const RecommendedCard = ({
   tag,
   reason,
   duration,
+  audio
 }) => {
+  const { playAudio } = useAudio();
   return (
-    <div className="rec-card">
+    <div className="rec-card" onClick={() => playAudio({ title, author, image, audio })}>
       <div className="rec-img">
         <img src={image} alt={title} />
 

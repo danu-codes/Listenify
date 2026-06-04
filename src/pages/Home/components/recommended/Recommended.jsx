@@ -10,6 +10,7 @@ const recommendedStories = [
     tag: "Horror",
     reason: "Because you listened to Horror stories",
     duration: "11 min",
+    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
   },
   {
     title: "Love in Rain",
@@ -18,6 +19,7 @@ const recommendedStories = [
     tag: "Romance",
     reason: "Similar to Romance stories you liked",
     duration: "8 min",
+    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
   },
   {
     title: "Space Exploration",
@@ -26,6 +28,7 @@ const recommendedStories = [
     tag: "Sci-Fi",
     reason: "Trending in Sci-Fi category",
     duration: "14 min",
+    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
   },
   {
     title: "Daily Motivation Boost",
@@ -34,6 +37,7 @@ const recommendedStories = [
     tag: "Motivation",
     reason: "Recommended for productivity lovers",
     duration: "6 min",
+    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
   },
 ];
 
