@@ -35,32 +35,29 @@ Users can explore stories, filter by category, search content, and listen to aud
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
+```
 src/
 ├── components/
-│ └── Navbar/
-│ 
+│   └── Navbar/
 │
 ├── context/
-│ └── AudioContext.jsx
+│   └── AudioContext.jsx
 │
 ├── data/
-│ └── stories.js
-│ 
+│   └── stories.js
 │
 ├── pages/
-│ ├── Home/
-│ ├── Explore/
-│ ├── Creators/
-| ├── Auth/
-│ └── Upload/
+│   ├── Home/
+│   ├── Explore/
+│   ├── Creators/
+│   ├── Auth/
+│   └── Upload/
 │
 ├── assets/
 └── App.jsx
-
-
----
+```
 
 ## 🧠 Key Functionalities
 
