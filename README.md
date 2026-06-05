@@ -39,20 +39,21 @@ Users can explore stories, filter by category, search content, and listen to aud
 
 src/
 ├── components/
-│ ├── Navbar/
-│ ├── CreatorCard/
+│ └── Navbar/
+│ 
 │
 ├── context/
 │ └── AudioContext.jsx
 │
 ├── data/
-│ ├── stories.js
-│ └── CreatorsData.js
+│ └── stories.js
+│ 
 │
 ├── pages/
 │ ├── Home/
 │ ├── Explore/
 │ ├── Creators/
+| ├── Auth/
 │ └── Upload/
 │
 ├── assets/
