@@ -39,12 +39,13 @@ export const Creators = () => {
                 <img src={c.image} alt={c.name} />
 
                 <div className="text">
+                  
                   <h3>{c.name}</h3>
-                  <p>{c.category}</p>
+                  <p>{c.category} | {c.followers}</p>
+                  
                 </div>
+                
               </div>
-
-              <small>{c.followers}</small>
             </div>
           ))}
         </div>

@@ -6,7 +6,7 @@ import { Categories } from './components/categories/Categories'
 import { Trending } from './components/trending/trending'
 import { Latest } from './components/latest/Latest'
 import { AudioPlayer } from './components/AudioPlayer/AudioPlayer'
-import {Creators} from './components/FeaturedCreators/Creators'
+import {FeaturedCreators} from './components/FeaturedCreators/FeaturedCreators'
 import { Recommended } from './components/recommended/Recommended'
 import { Footer } from './components/Footer/Footer'
 
@@ -18,7 +18,7 @@ export const Home = () => {
         <Categories/>
         <Trending/>
         <Latest/>
-        <Creators/>
+        <FeaturedCreators/>
         <Recommended/>
         <Footer/>
     </div>

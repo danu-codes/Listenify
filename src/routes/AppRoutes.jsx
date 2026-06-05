@@ -4,7 +4,7 @@ import { Explore } from "../pages/Explore/Explore";
 import { Upload } from "../pages/Upload/Upload";
 import Auth from "../pages/Auth/Auth";
 import { AudioPlayer } from "../pages/Home/components/AudioPlayer/AudioPlayer";
-import { Creators } from "../pages/Creators/Creators";
+import {Creators} from "../pages/Creators/Creators";
 
 export const AppRoutes = () => {
   const location = useLocation();
