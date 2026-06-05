@@ -100,7 +100,7 @@ https://danu-codes.github.io/Listenify/
 
 ![Upload](image-2.png)
 
-![Login/Register](image-3.png)
+![Login/ Register](image-6.png)
 ---
 
 ## 🚀 Future Improvements
