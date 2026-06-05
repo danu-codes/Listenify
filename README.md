@@ -62,16 +62,8 @@ src/
 ## 🧠 Key Functionalities
 
 ### 🔎 Search Logic
-- Searches only story titles (can be extended to description/category)
-
 ### 🎯 Filtering System
-- Filters + Category selection are mutually controlled
-- Sorting resets when category changes
-
 ### 👤 Creator Interaction
-- Clicking a creator updates:
-  - Left detail panel
-  - Active highlight in list
 
 ---
 
