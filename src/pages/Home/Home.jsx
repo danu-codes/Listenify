@@ -6,7 +6,7 @@ import { Categories } from './components/categories/Categories'
 import { Trending } from './components/trending/trending'
 import { Latest } from './components/latest/Latest'
 import { AudioPlayer } from './components/AudioPlayer/AudioPlayer'
-import {Creators} from './components/creators/Creators'
+import {Creators} from './components/FeaturedCreators/Creators'
 import { Recommended } from './components/recommended/Recommended'
 import { Footer } from './components/Footer/Footer'
 

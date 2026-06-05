@@ -1,6 +1,7 @@
 import React from "react";
 import "./Creators.css";
 import { CreatorCard } from "./CreatorCard";
+import { useNavigate } from "react-router-dom";
 
 const creators = [
   {
@@ -42,9 +43,10 @@ const creators = [
 ];
 
 export const Creators = () => {
+  const navigate = useNavigate();
   return (
     <div className="creators-section">
-      <h2>⭐ Featured Creators</h2>
+      <h2 onClick={() => navigate("/creators")} style={{ cursor: "pointer" }}>⭐ Featured Creators</h2>
 
       <div className="creators-scroll">
         {creators.map((creator, index) => (

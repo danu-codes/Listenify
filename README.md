@@ -1,55 +1,89 @@
-# 🎧 Listenify - Audio Story / Podcast Platform
+# 🎧 Audiobook Web App (React + Vite)
 
-A modern React-based audio story and podcast web application with smooth UI, filtering system, and global audio player.
+A modern audiobook / storytelling web application built using **React (Vite)**.  
+Users can explore stories, filter by category, search content, and listen to audio stories with a smooth UI experience.
 
 ---
 
 ## 🚀 Features
 
-- 🔍 Smart Search (title, author, category)
-- 🎯 Category Filtering (Horror, Romance, Sci-Fi, etc.)
-- 📊 Sorting System (Popular, Newest, Duration)
-- 🎧 Global Audio Player (Context API based)
-- ▶ Click-to-Play Story Cards
-- 📱 Fully Responsive Design
-- ⚡ Clean and reusable component structure
+### 🎧 Audio Experience
+- Play audiobooks directly from story cards
+- Central audio context for global playback control
 
----
+### 🔍 Explore System
+- Search stories by title (live filtering)
+- Filter by:
+  - Popular 🔥
+  - Newest 🆕
+  - Duration ⏱️
+- Category-based browsing (Horror, Romance, Sci-Fi, Motivation, Kids, Podcasts)
 
-## 🛠 Tech Stack
+### 👥 Creators Page
+- Featured creators section on Home page
+- Full Creators page with:
+  - Creator profile detail view
+  - Click-to-select creator
+  - Creator list with active highlighting
+  - Stories count, followers, category info
 
-- React JS
-- React Router DOM
-- Context API (State Management)
-- CSS3 (Custom Styling)
-- JavaScript (ES6+)
+### 🎨 UI/UX
+- Glassmorphism design
+- Smooth hover animations
+- Responsive layout (mobile + tablet + desktop)
+- Modern dark theme with orange accent
 
 ---
 
 ## 📂 Project Structure
+
 src/
 ├── components/
+│ ├── Navbar/
+│ ├── CreatorCard/
+│
 ├── context/
+│ └── AudioContext.jsx
+│
 ├── data/
+│ ├── stories.js
+│ └── CreatorsData.js
+│
 ├── pages/
 │ ├── Home/
 │ ├── Explore/
-│ ├── Upload/
-│ └── Auth/
-├── routes/
-├── App.jsx
-└── main.jsx
+│ ├── Creators/
+│ └── Upload/
+│
+├── assets/
+└── App.jsx
 
 
 ---
 
-## 🎧 Core Feature: Audio Player
+## 🧠 Key Functionalities
 
-A global audio player allows users to:
+### 🔎 Search Logic
+- Searches only story titles (can be extended to description/category)
 
-- Play any story from any page
-- Control play/pause state globally
-- Persist current audio across navigation
+### 🎯 Filtering System
+- Filters + Category selection are mutually controlled
+- Sorting resets when category changes
+
+### 👤 Creator Interaction
+- Clicking a creator updates:
+  - Left detail panel
+  - Active highlight in list
+
+---
+
+## ⚙️ Tech Stack
+
+- React.js ⚛️
+- Vite ⚡
+- CSS3 🎨
+- React Router DOM 🧭
+- Context API 🎧
 
 ---
 
@@ -74,10 +108,10 @@ https://danu-codes.github.io/Listenify/
 ## 🚀 Future Improvements
 
 - 🔐 Authentication system
-- ☁ Backend integration (Node.js / Firebase)
-- ❤️ Like / Favorite system
-- 📂 Playlist creation
-- 🌐 Deploy to production
+- ❤️ Like / Save stories
+- 📱 Mobile app version
+- ☁️ Backend integration (Node.js / Firebase)
+- 🎙️ Creator upload dashboard
 
 ---
 

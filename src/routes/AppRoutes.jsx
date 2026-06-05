@@ -4,6 +4,7 @@ import { Explore } from "../pages/Explore/Explore";
 import { Upload } from "../pages/Upload/Upload";
 import Auth from "../pages/Auth/Auth";
 import { AudioPlayer } from "../pages/Home/components/AudioPlayer/AudioPlayer";
+import { Creators } from "../pages/Creators/Creators";
 
 export const AppRoutes = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ export const AppRoutes = () => {
         <Route path="/explore" element={<Explore />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/auth" element={<Auth />} />
+        <Route path="/creators" element={<Creators />} />
       </Routes>
 
       {!hidePlayer && <AudioPlayer />}

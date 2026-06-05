@@ -15,7 +15,7 @@ export const Hero = () => {
                 </div>
             </div>
             <div className="hero-right">
-                <img src="./images/hero2.jpg" alt="Music image" />
+                <img src={`${import.meta.env.BASE_URL}images/hero2.jpg`} alt="Music image" />
             </div>
         </div>
     )
