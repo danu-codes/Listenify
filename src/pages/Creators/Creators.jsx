@@ -29,26 +29,25 @@ export const Creators = () => {
 
         {/* RIGHT - LIST */}
         <div className="creator-list">
-          {creators.map((c) => (
-            <div
-              key={c.id}
-              className={`creator-card ${selectedCreator.id === c.id ? "active" : ""}`}
-              onClick={() => setSelectedCreator(c)}
-            >
-              <div className="left">
-                <img src={c.image} alt={c.name} />
+  {creators.map((c) => (
+    <div
+      key={c.id}
+      className={`creator-card ${
+        selectedCreator.id === c.id ? "active" : ""
+      }`}
+      onClick={() => setSelectedCreator(c)}
+    >
+      <img src={c.image} alt={c.name} />
 
-                <div className="text">
-                  
-                  <h3>{c.name}</h3>
-                  <p>{c.category} | {c.followers}</p>
-                  
-                </div>
-                
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="info">
+        <h3>{c.name}</h3>
+        <p>{c.category}</p>
+      </div>
+
+      <span className="followers">{c.followers}</span>
+    </div>
+  ))}
+</div>
 
       </div>
     </>
