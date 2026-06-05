@@ -83,10 +83,8 @@
 
 /* RANGE */
 .audio-controls input[type="range"] {
-    flex: 1;
-    min-width: 100px;
-
-    accent-color: #F97316;
+  width: 200px;
+  accent-color: #f97316;
 }
 
 /* ================= TABLET ================= */

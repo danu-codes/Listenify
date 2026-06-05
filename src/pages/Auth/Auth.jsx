@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Auth.css";
+import { Navbar } from "../../components/Navbar/Navbar";
 
 const Auth = () => {
 
@@ -24,7 +25,7 @@ const Auth = () => {
     alert(isLogin ? "Login success (UI only)" : "Register success (UI only)");
   };
 
-  return (
+  return (<><Navbar />
     <div className="auth-container">
 
       <div className="auth-box">
@@ -83,6 +84,7 @@ const Auth = () => {
       </div>
 
     </div>
+  </>
   );
 };
 

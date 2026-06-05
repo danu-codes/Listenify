@@ -64,7 +64,7 @@ const trendingStories = [
 export const Trending = () => {
   return (
     <div className="trending-section">
-      <h2>🔥 Trending Stories</h2>
+      <h2>🔥 Trending</h2>
 
       <div className="trending-scroll">
         {trendingStories.map((story, index) => (

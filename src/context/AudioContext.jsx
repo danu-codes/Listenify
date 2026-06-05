@@ -3,66 +3,60 @@ import React, { createContext, useContext, useState, useRef, useEffect } from "r
 const AudioContext = createContext();
 
 export const AudioProvider = ({ children }) => {
-  const audioRef = useRef(new Audio());
-
   const [currentTrack, setCurrentTrack] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  const playAudio = (story) => {
+  const audioRef = useRef(new Audio());
+
+  // 🎧 SETUP AUDIO EVENTS (IMPORTANT PART)
+  useEffect(() => {
     const audio = audioRef.current;
 
-    if (currentTrack?.audio !== story.audio) {
-      audio.src = story.audio;
-      setCurrentTrack(story);
-    }
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    const setAudioDuration = () => setDuration(audio.duration);
 
+    audio.addEventListener("timeupdate", updateTime);
+    audio.addEventListener("loadedmetadata", setAudioDuration);
+    audio.addEventListener("ended", () => setIsPlaying(false));
+
+    return () => {
+      audio.removeEventListener("timeupdate", updateTime);
+      audio.removeEventListener("loadedmetadata", setAudioDuration);
+    };
+  }, []);
+
+  // ▶️ PLAY AUDIO
+  const playAudio = (story) => {
+    setCurrentTrack(story);
+
+    const audio = audioRef.current;
+    audio.src = story.audio;
     audio.play();
+
     setIsPlaying(true);
   };
 
-  const pauseAudio = () => {
-    audioRef.current.pause();
-    setIsPlaying(false);
-  };
-
+  // ⏯ TOGGLE PLAY
   const togglePlay = () => {
+    const audio = audioRef.current;
+
     if (!currentTrack) return;
 
     if (isPlaying) {
-      pauseAudio();
+      audio.pause();
+      setIsPlaying(false);
     } else {
-      audioRef.current.play();
+      audio.play();
       setIsPlaying(true);
     }
   };
 
-  // 🔥 LIVE LISTENERS
-  useEffect(() => {
-    const audio = audioRef.current;
-
-    const updateTime = () => {
-      setCurrentTime(audio.currentTime);
-    };
-
-    const setAudioData = () => {
-      setDuration(audio.duration);
-    };
-
-    audio.addEventListener("timeupdate", updateTime);
-    audio.addEventListener("loadedmetadata", setAudioData);
-
-    return () => {
-      audio.removeEventListener("timeupdate", updateTime);
-      audio.removeEventListener("loadedmetadata", setAudioData);
-    };
-  }, []);
-
-  // 🔥 SEEK FUNCTION
+  // 🔁 SEEK AUDIO
   const seekAudio = (time) => {
     audioRef.current.currentTime = time;
+    setCurrentTime(time);
   };
 
   return (
@@ -70,11 +64,10 @@ export const AudioProvider = ({ children }) => {
       value={{
         currentTrack,
         isPlaying,
-        playAudio,
-        pauseAudio,
-        togglePlay,
         currentTime,
         duration,
+        playAudio,
+        togglePlay,
         seekAudio,
       }}
     >

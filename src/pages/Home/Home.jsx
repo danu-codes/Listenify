@@ -18,7 +18,6 @@ export const Home = () => {
         <Categories/>
         <Trending/>
         <Latest/>
-        <AudioPlayer/>
         <Creators/>
         <Recommended/>
         <Footer/>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./AudioPlayer.css";
 import { useAudio } from "../../../../context/AudioContext";
+
 export const AudioPlayer = () => {
   const {
     currentTrack,
@@ -8,14 +9,17 @@ export const AudioPlayer = () => {
     togglePlay,
     currentTime,
     duration,
-    seekAudio,
+    seekAudio
   } = useAudio();
 
-  const formatTime = (time) => {
-    if (!time) return "0:00";
-    const min = Math.floor(time / 60);
-    const sec = Math.floor(time % 60);
-    return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+  if (!currentTrack) return null;
+
+  // ⏱ format time
+  const formatTime = (t) => {
+    if (!t) return "0:00";
+    const m = Math.floor(t / 60);
+    const s = Math.floor(t % 60);
+    return `${m}:${s < 10 ? "0" : ""}${s}`;
   };
 
   const progress = duration ? (currentTime / duration) * 100 : 0;
@@ -25,18 +29,19 @@ export const AudioPlayer = () => {
 
       {/* INFO */}
       <div className="audio-info">
-        <h4>{currentTrack ? currentTrack.title : "No track selected"}</h4>
-        <p>{currentTrack ? currentTrack.author : "Click a story"}</p>
+        <h4>{currentTrack.title}</h4>
+        <p>{currentTrack.author}</p>
       </div>
 
       {/* CONTROLS */}
       <div className="audio-controls">
 
-        <button onClick={togglePlay} disabled={!currentTrack}>
+        {/* PLAY / PAUSE */}
+        <button onClick={togglePlay}>
           {isPlaying ? "⏸" : "▶"}
         </button>
 
-        {/* PROGRESS BAR */}
+        {/* SEEK BAR */}
         <input
           type="range"
           min="0"
@@ -47,11 +52,13 @@ export const AudioPlayer = () => {
           }
         />
 
+        {/* TIME */}
         <span>
           {formatTime(currentTime)} / {formatTime(duration)}
         </span>
 
       </div>
+
     </div>
   );
 };

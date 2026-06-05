@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Upload.css';
+import { Navbar } from "../../components/Navbar/Navbar";
 
 
 export const Upload = () => {
@@ -41,6 +42,7 @@ export const Upload = () => {
   };
 
   return (
+    <><Navbar/>
     <div className="upload-container">
       <h1 className="upload-title">🎤 Upload Your Story</h1>
       <form className="upload-form" onSubmit={handleSubmit}>
@@ -86,5 +88,6 @@ export const Upload = () => {
 
       </form>
     </div>
+    </>
   )
 }

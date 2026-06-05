@@ -12,7 +12,7 @@ export const Navbar = () => {
         <div className="navbar-container">
 
             {/* LOGO */}
-            <div className="logo">
+            <div className="logo" onClick={() => navigate("/")}>
                 Listenify
             </div>
 
@@ -37,11 +37,6 @@ export const Navbar = () => {
                     </NavLink>
                 </li>
 
-                <li>
-                    <NavLink to="/podcasts" className="nav-link" onClick={closeMenu}>
-                        Podcasts
-                    </NavLink>
-                </li>
 
                 {/* MOBILE LOGIN */}
                 <li className="mobile-auth">
@@ -53,9 +48,9 @@ export const Navbar = () => {
 
             </ul>
 
-            <div className="nav-search-wrapper">
+            {/* <div className="nav-search-wrapper">
                 <input type="text" placeholder="Search..." />
-            </div>
+            </div> */}
 
             {/* HAMBURGER */}
             <div
@@ -68,7 +63,7 @@ export const Navbar = () => {
 
             {/* DESKTOP LOGIN */}
             <div className="auth-desktop">
-                <button className="auth-btn">
+                <button className="auth-btn" onClick={() => navigate("/auth")}>
                     Login / Register
                 </button>
             </div>

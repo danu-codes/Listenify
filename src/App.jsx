@@ -8,11 +8,11 @@ import React from 'react'
 function App() {
   return (
     <>
-      <BrowserRouter  basename="/Listenify">
-        <AudioProvider>
+      <AudioProvider>
+        <BrowserRouter basename="/Listenify">
           <AppRoutes />
-        </AudioProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </AudioProvider>
     </>
   )
 }

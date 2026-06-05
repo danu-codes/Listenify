@@ -1,5 +1,4 @@
-
-/* ================= CONTAINER ================= */
+/* ================= BASE ================= */
 .explore-container {
     width: 90%;
     margin: auto;
@@ -7,43 +6,52 @@
     color: white;
 }
 
-/* TITLE */
+/* ================= TITLE ================= */
 .explore-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 25px;
 
-    background: linear-gradient(to right, #F97316, #FB923C);
+    background: linear-gradient(90deg, #F97316, #FB923C);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-/* ================= SEARCH BOX ================= */
+/* ================= SEARCH ================= */
 .search-box {
     display: flex;
     align-items: center;
-
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
 
     margin-bottom: 25px;
 
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(15, 23, 42, 0.75);
     border: 1px solid rgba(255,255,255,0.08);
 
-    border-radius: 15px;
+    border-radius: 14px;
     overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #F97316;
+    box-shadow: 0 0 15px rgba(249,115,22,0.25);
 }
 
 .search-box input {
     flex: 1;
-
-    padding: 14px;
+    padding: 14px 16px;
 
     border: none;
     outline: none;
 
     background: transparent;
     color: white;
+    font-size: 0.95rem;
 }
 
 .search-box input::placeholder {
@@ -51,15 +59,20 @@
 }
 
 .search-box button {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
 
     border: none;
+    cursor: pointer;
 
-    background: linear-gradient(to right, #F97316, #EA580C);
+    background: linear-gradient(90deg, #F97316, #EA580C);
     color: white;
 
-    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    filter: brightness(1.1);
 }
 
 /* ================= FILTERS ================= */
@@ -67,7 +80,6 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-
     margin-bottom: 30px;
 }
 
@@ -75,7 +87,6 @@
     padding: 8px 14px;
 
     border-radius: 10px;
-
     border: 1px solid rgba(255,255,255,0.1);
 
     background: rgba(30,41,59,0.6);
@@ -83,16 +94,18 @@
 
     cursor: pointer;
 
-    transition: 0.3s ease;
+    transition: all 0.25s ease;
+    font-size: 0.85rem;
 }
 
 .filter-box button:hover {
     background: #F97316;
+    transform: translateY(-2px);
 }
 
 /* ================= SECTION TITLE ================= */
 .section-title {
-    margin: 20px 0;
+    margin: 25px 0 15px;
     font-size: 1.3rem;
     color: #E2E8F0;
 }
@@ -100,29 +113,201 @@
 /* ================= CATEGORY GRID ================= */
 .category-grid {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 15px;
+    margin-bottom: 30px;
 }
 
+/* CATEGORY CARD */
 .category-card {
     background: rgba(15, 23, 42, 0.7);
-
     border: 1px solid rgba(255,255,255,0.08);
 
-    padding: 25px;
-
+    padding: 22px;
     text-align: center;
 
-    border-radius: 15px;
-
+    border-radius: 14px;
     cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    font-weight: 500;
+    color: #E2E8F0;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    background: rgba(249, 115, 22, 0.12);
+    border-color: #F97316;
+}
+
+/* ACTIVE CATEGORY */
+.category-card.active {
+    background: rgba(249, 115, 22, 0.18);
+    border-color: #F97316;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(249,115,22,0.2);
+}
+
+/* ================= STORY GRID ================= */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* STORY CARD */
+.story-card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    animation: fadeIn 0.4s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    border-color: #F97316;
+}
+
+/* IMAGE */
+.story-image {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.story-card:hover .story-image img {
+    transform: scale(1.1);
+}
+
+/* PLAY BUTTON */
+.play-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    background: #F97316;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 18px;
+
+    opacity: 0;
+    transform: scale(0.8);
 
     transition: 0.3s ease;
 }
 
-.category-card:hover {
-    transform: translateY(-5px);
-    background: rgba(249, 115, 22, 0.15);
+.story-card:hover .play-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* INFO */
+.story-info {
+    padding: 12px;
+}
+
+.story-info h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #F8FAFC;
+}
+
+.story-info p {
+    font-size: 0.85rem;
+    color: #94A3B8;
+    margin: 5px 0;
+}
+
+.story-info small {
+    color: #64748B;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .explore-container {
+        width: 95%;
+        padding: 30px 0;
+    }
+
+    .explore-title {
+        font-size: 1.7rem;
+    }
+
+    .story-grid {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .explore-title {
+        font-size: 1.4rem;
+    }
+
+    .search-box button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .story-image {
+        height: 145px;
+    }
+
+    .category-card {
+        padding: 18px;
+    }
+
+    .filter-box button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+.filter-box button.active {
+    background: rgba(249, 115, 22, 0.2);
     border-color: #F97316;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(249,115,22,0.25);
+    transform: translateY(-2px);
+}
+
+.filter-box button {
+    transition: all 0.25s ease;
 }
