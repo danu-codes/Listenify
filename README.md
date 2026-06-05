@@ -53,6 +53,13 @@ A global audio player allows users to:
 
 ---
 
+## 🎮 Demo
+
+Live Demo:
+https://danu-codes.github.io/Listenify/
+
+---
+
 ## 📸 Screenshots
 
 ![Home](image-5.png)
