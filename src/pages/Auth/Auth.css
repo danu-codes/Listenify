@@ -135,3 +135,45 @@
         font-size: 0.8rem;
     }
 }
+
+/* PASSWORD FIELD WRAPPER */
+.password-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.password-box input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+/* EYE ICON */
+.toggle-eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* ERROR TEXT */
+.error {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+/* FORGOT PASSWORD */
+.forgot {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #F97316;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
