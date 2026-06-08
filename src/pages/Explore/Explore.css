@@ -101,10 +101,17 @@
     justify-items: center;
 }
 
+
+/* ================= STORY GRID ================= */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
 /* ================= STORY CARD ================= */
 .story-card {
     width: 100%;
-    max-width: 260px;
     background: rgba(15, 23, 42, 0.7);
     border-radius: 15px;
     overflow: hidden;
@@ -133,41 +140,17 @@
 }
 
 /* ================= TABLET ================= */
-@media (max-width: 768px) {
-
-    .explore-container {
-        width: 95%;
-        padding: 30px 0;
-    }
-
-    .explore-title {
-        font-size: 1.7rem;
-    }
-
+@media (max-width: 1024px) {
     .story-grid {
-        grid-template-columns: repeat(2, 1fr); /* ✅ FIXED 2 COLUMNS */
-        gap: 14px;
-    }
-
-    .story-card {
-        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 480px) {
-
-    .explore-title {
-        font-size: 1.4rem;
-    }
-
+@media (max-width: 600px) {
     .story-grid {
-        grid-template-columns: repeat(2, 1fr); /* ✅ STILL 2 COLUMNS */
-        gap: 10px;
-    }
-
-    .story-card {
-        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
     .story-image {
@@ -175,15 +158,17 @@
     }
 
     .story-info h3 {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .story-info p {
         font-size: 0.75rem;
     }
+}
 
-    .filter-box button {
-        font-size: 0.8rem;
-        padding: 6px 10px;
+/* ================= VERY SMALL MOBILE ================= */
+@media (max-width: 400px) {
+    .story-grid {
+        grid-template-columns: 1fr;
     }
 }
